@@ -25,6 +25,7 @@ defmodule Day01 do
     Enum.reduce(left, 0, fn i, acc -> acc +  (i * Map.get(frequencies, i, 0)) end)
   end
 
+
   def solve(file_path) do
     File.read!(file_path)
     |> String.split("\n", trim: true)
@@ -39,8 +40,8 @@ defmodule Day01 do
       }
     end)
   end
-
 end
+
 
 result = Day01.solve("day01.txt")
 IO.inspect(result, label: "Solutions")
