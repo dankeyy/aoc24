@@ -60,7 +60,6 @@ int main(void)
             token = strtok_r(NULL, " ", &save_ptr);
         }
 
-        // Check for safety without skipping
         bool safe = is_safe(numbers, count, -1);
         if (safe) {
             safes++;
@@ -68,8 +67,8 @@ int main(void)
         } else {
             for(int i = 0; i < count; i++) {
                 if (is_safe(numbers, count, i)) {
-                    safes_with_tolerance++;  // It became safe by removing element i
-                    break;
+                    safes_with_tolerance++;  // became safe by removing element i
+                    break; // no point looking for other possible removes
                 }
             }
         }

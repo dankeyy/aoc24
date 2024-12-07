@@ -34,7 +34,7 @@ calibration operators ParsedLine{total=result, elements=operands} =
 
 main :: IO ()
 main = do
-  contents <- readFile "day07_test.txt"
+  contents <- readFile "day07.txt"
   print $ sum $ map ((calibration [(*), (+)])             . parse) . lines $ contents -- p1
   print $ sum $ map ((calibration [(*), (+), numsConcat]) . parse) . lines $ contents -- p2
   where
